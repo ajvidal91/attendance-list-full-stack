@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance-List</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Add a student</h1>
+<section class="container">
+  <form action="/students" method="POST">
+    <input id="name" type="text" placeholder="student name" name="onTime">
+    <input id="statusStudent" type="text" placeholder="status" name="late">
+    <button id="butt" type="button">Submit</button>
+  </form>
+</section>
+
+  <h2></h2>
+  <ul class="students">
+  <% for(var i=0; i<students.length; i++) {%>
+    <li class="onTimeList">
+      <span>Name: <%= students[i].name %></span>
+      <span>Status: <%= students[i].status %></span>
+    </li>
+  <% } %>
+  </ul>
+  <script src="main.js"></script>
+
+</body>
+</html>
