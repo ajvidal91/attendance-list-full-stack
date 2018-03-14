@@ -2,31 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Attendance-List</title>
+  <title>Attendance</title>
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>
+      <span>A</span>
+      <span>t</span>
+      <span>t</span>
+      <span>e</span>
+      <span>n</span>
+      <span>d</span>
+      <span>a</span>
+      <span>n</span>
+      <span>c</span>
+      <span>e</span>
+    </h1>
+  </header>
+<section id="formContainer">
 
-  <h1>Add a student</h1>
-<section class="container">
+  <h1>Attendance List</h1>
+  <h2>Add a student</h2>
+
   <form action="/students" method="POST">
-    <input id="name" type="text" placeholder="student name" name="onTime">
-    <input id="statusStudent" type="text" placeholder="status" name="late">
-    <button id="butt" type="button">Submit</button>
-  </form>
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="status" name="status">
+    <button type="submit">Submit</button>
 </section>
 
-  <h2></h2>
+<section id="listContainer">
+  <h3>Students</h3>
   <ul class="students">
   <% for(var i=0; i<students.length; i++) {%>
-    <li class="onTimeList">
-      <span>Name: <%= students[i].name %></span>
-      <span>Status: <%= students[i].status %></span>
+    <li class="student">
+      <span><%= students[i].name %></span>
+      <span><%= students[i].status %></span>
+      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
     </li>
   <% } %>
   </ul>
+</section>
+
   <script src="main.js"></script>
 
 </body>
